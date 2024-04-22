@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructring</title>
+</head>
+<body>
+    <script>
+        // Destructuring Array
+        const siswa = ['asep', 'budi', 'cecep', 'dodi', 'edo']
+        const [siswa1, siswa2, siswa3] = siswa;
+
+        console.log(siswa1, siswa2, siswa3)
+
+        // Destructuring Object 
+        const listSiswa = {
+            nama: "Asep Kurniadi",
+            kelas: 6,
+            sekolah: "SD Sukorejo Indah",
+            alamat: "jl Pegangsaan Utara No. 5",
+            wali: {
+                ayah: "Junaidi",
+                ibu: "Sri Handayani"
+            },
+            lulus: "2020"
+        }
+
+        const {nama, kelas, sekolah, wali:{ayah, ibu}} = listSiswa;
+        console.log(nama, kelas, sekolah, ayah, ibu)
+
+
+        // Destructuring Function
+        function infoListSiswa({nama, kelas, sekolah}) {
+            console.log(nama, kelas, sekolah)
+        }
+
+        infoListSiswa(listSiswa)
+
+
+        // Default value & Alias
+        function infoListSiswa2({nama, kelas, sekolah:sklh, lulus= 2024}) {
+            console.log(nama, kelas, sklh, lulus)
+        }
+
+        infoListSiswa2(listSiswa)
+    </script>
+</body>
+</html>
